@@ -73,10 +73,11 @@ function pkt:getTimestamp(dev)
 		else
 			-- TODO: this is only tested with the Intel 82580 NIC at the moment
 			-- the datasheet claims that low and high are swapped, but this doesn't seem to be the case
-			-- TODO: check other NICs
-			low = data[2]
-			high = data[3]
-			return high * 2^32 + low
+		   -- TODO: check other NICs
+		   return tonumber(self.timestamp)
+		   -- low = data[2]
+		   -- high = data[3]
+		   -- return high * 2^32 + low
 		end
 	end
 end
